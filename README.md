@@ -34,7 +34,7 @@ Welcome to the Hummingbot Deploy project. This guide will walk you through the s
    - Go to the tab PMM Simple and create a new configuration. Soon will be released a video explaining how the strategy works.
 
 5. **Deploy the configuration**
-   - Go to the Deploy tab, select a name for your bot, the image hummingbot/hummingbot:latest and the configuration you just created.
+   - Go to the Deploy tab, select a name for your bot, the image buddhasource/hummingbot:tegro and the configuration you just created.
    - Press the button to create a new instance.
 
 6. **Check the status of the bot**
