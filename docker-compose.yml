@@ -1,17 +1,17 @@
 services:
   dashboard:
     container_name: dashboard
-    image: hummingbot/dashboard:latest
+    image: buddhasource/dashboard:latest
     ports:
       - "8501:8501"
     environment:
-        - BACKEND_API_HOST=backend-api
-        - BACKEND_API_PORT=8000
+      - BACKEND_API_HOST=backend-api
+      - BACKEND_API_PORT=8000
     networks:
-        - emqx-bridge
+      - emqx-bridge
   backend-api:
     container_name: backend-api
-    image: hummingbot/backend-api:latest
+    image: buddhasource/backend-api:latest
     ports:
       - "8000:8000"
     volumes:
@@ -39,13 +39,13 @@ services:
       - emqx-log:/opt/emqx/log
       - emqx-etc:/opt/emqx/etc
     ports:
-      - "1883:1883"  # mqtt:tcp
-      - "8883:8883"  # mqtt:tcp:ssl
-      - "8083:8083"  # mqtt:ws
-      - "8084:8084"  # mqtt:ws:ssl
-      - "8081:8081"  # http:management
-      - "18083:18083"  # http:dashboard
-      - "61613:61613"  # web-stomp gateway
+      - "1883:1883" # mqtt:tcp
+      - "8883:8883" # mqtt:tcp:ssl
+      - "8083:8083" # mqtt:ws
+      - "8084:8084" # mqtt:ws:ssl
+      - "8081:8081" # http:management
+      - "18083:18083" # http:dashboard
+      - "61613:61613" # web-stomp gateway
     networks:
       emqx-bridge:
         aliases:
@@ -61,6 +61,6 @@ networks:
     driver: bridge
 
 volumes:
-  emqx-data: { }
-  emqx-log: { }
-  emqx-etc: { }
+  emqx-data: {}
+  emqx-log: {}
+  emqx-etc: {}
